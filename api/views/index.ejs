@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta name="viewport" content="maximum-scale=1.0, user-scalable=no" />
+        <script src="https://kit.fontawesome.com/69197fd746.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <input type="button" value="Enviar" onclick="print()">
+        <div id="tbody"></div>
+        <script>
+
+            function print(){
+                $.getJSON("http://192.168.0.102:9091/api/produtos", function(data){
+
+                for (let index = 0; index < data.length; index++) {
+                    console.log("Produto(id:" + data[index].codigo + ", nome:'" + data[index].nome + "', preco:" + data[index].valorvenda + "),");
+                }
+                })
+            } 
+
+
+
+
+        </script>
+    </body>
+</html>
